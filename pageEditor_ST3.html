@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor — Haroon Hussain</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/pageEditor_validator.css">
+
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding">
+        <img src="images/logo.png" alt="EarthWise sustainability logo with leaf and water symbol">
+        <div>
+          <h1>EarthWise</h1>
+          <p>Greener choices. Stronger communities.</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="ais.html">AIS</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+    <section class="stud">
+        <h2>Haroon Hussain, Green, Student 3</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- ==================== FEEDBACK PAGE ==================== -->
+            <section>
+                <h2 id="feedback">Feedback Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The feedback page is built using the shared template that Student 1 made, so the header, nav bar and footer are the same across all pages. I linked the global styles.css for the base styling, and then I added my own page-specific CSS inside a style tag in the head section so it only affects this page and doesnt interfere with anyone elses pages.</p>
+
+                        <p>For the HTML structure I used semantic elements like section tags to split the page into three clear parts — the programme directory, the ratings and reviews area, and the feedback form. The form itself uses two fieldset elements with legend tags to group the personal details and the feedback details separately, which helps with both readability and accessibility.</p>
+
+                        <p>The programme directory at the top uses a scrollable container. I set a max-height on a div and used overflow-y: scroll so that users can scroll through the programme cards without the page getting really long. Each programme card uses flexbox (display: flex with gap) to lay the image and text side by side (<a href="#ref">MDN Web Docs, 2025</a>). I also used object-fit: cover on the images so they stay the same size regardless of the original image dimensions.</p>
+
+                        <p>The reviews section uses CSS Grid with repeat(auto-fit, minmax(260px, 1fr)) which means the cards automatically wrap onto new rows depending on the screen width (<a href="#ref">MDN Web Docs, 2025</a>). I didnt need any media queries for this part because auto-fit handles the responsiveness on its own which I thought was quite neat.</p>
+
+                        <p>For JavaScript, I wrote two main bits of functionality. The first is a character counter that listens for the input event on the comment textarea and updates the remaining character count in real time. The second is the form validation function which checks that the name, email, and comment fields arent empty, and also checks that the email contains an @ symbol (<a href="#ref">W3Schools, 2025</a>). If validation fails it shows error messages below the relevant fields by toggling the display property. If everything is valid, it hides the form and shows a confirmation box instead.</p>
+
+                    <h3>Accessibility</h3>
+                        <p>I tried to make the feedback page as accessible as I could. Every form input has a label element linked to it using the for attribute, which means screen readers can properly announce what each field is for. I used fieldset and legend to group related inputs together so its clear which fields belong to personal details and which are for the feedback itself. The error messages are placed right next to the fields they relate to so users can easily see what needs fixing. The nav bar has an aria-label="Main navigation" which helps assistive technology identify it. All images have descriptive alt text too.</p>
+
+                    <h3>Link to the validation page</h3>
+                        <p><a href="validation_ST3.html#feedbackVal">See validation report for the Feedback page</a></p>
+
+                    <h3>Link to the page</h3>
+                        <p><a href="feedback.html" target="_blank">View the Feedback page</a></p>
+            </section>
+
+            <!-- ==================== TEAM PAGE ==================== -->
+            <section>
+                <h2 id="team">Team Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The team page follows the same shared template as the other pages. I used the global styles.css and then added page-specific styles in a style tag in the head, same approach as the feedback page.</p>
+
+                        <p>The layout is a CSS Grid using repeat(auto-fit, minmax(220px, 1fr)) so the member cards automatically arrange themselves based on screen size. Each card is a div with overflow: hidden and a border-radius to give it a rounded look. The member photos use object-fit: cover with a fixed height of 220px so they all look consistent even if the original images are different sizes.</p>
+
+                        <p>The main interactive feature is the expandable details panel on each card. I did this entirely with CSS — no JavaScript at all. Each card has a hidden div (member-details) that has max-height: 0 and overflow: hidden by default. When the user hovers over the card or focuses on it with the keyboard, the max-height transitions to 200px which creates a smooth slide-down animation. I used a transition on both max-height and padding so it looks smooth rather than just snapping open.</p>
+
+                        <p>I also added transform: translateY(-6px) on hover so the cards lift up slightly, which gives a nice visual feedback to show which card youre looking at. The whole thing works without JavaScript which keeps the page lightweight and means it still works even if someone has JS disabled in their browser (<a href="#ref">Duckett, 2011</a>).</p>
+
+                    <h3>Accessibility</h3>
+                        <p>Since the expand effect relies on hover, I needed to make sure keyboard users could access it too. I added tabindex="0" to each member card so they can be focused using the Tab key, and the CSS uses :focus alongside :hover to trigger the same expand animation. This means you can tab through all four cards and see the details without needing a mouse. Each image has alt text that includes the persons name and student number. The nav bar also has the same aria-label as the other pages for consistency.</p>
+
+                    <h3>Link to the validation page</h3>
+                        <p><a href="validation_ST3.html#teamVal">See validation report for the Team page</a></p>
+
+                    <h3>Link to the page</h3>
+                        <p><a href="team.html" target="_blank">View the Team page</a></p>
+            </section>
+
+            <!-- ==================== CONTENT PAGE ==================== -->
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>My content page is about SDG 13: Climate Action (<a href="#ref">United Nations, 2025</a>). Its structured into five sections — an introduction, why it matters, what students can do, real life examples, and useful resources. Each section has its own id attribute so users can jump to them from the internal navigation at the top of the page.</p>
+
+                        <p>For the layout, each section is wrapped in a div with a class called content-section which gives it a white background, rounded corners, padding and a subtle box-shadow. This makes each section look like a card which I think makes the page easier to read compared to just having a wall of text. The images use max-width: 100% so they scale down on smaller screens without overflowing.</p>
+
+                        <p>The internal navigation at the top uses a nav element with anchor links that point to the section IDs (like #intro, #why, #students etc). I styled the nav list with flexbox and flex-wrap so the links sit side by side and wrap onto new lines if the screen is too narrow. Theres no JavaScript on this page at all.</p>
+
+                        <p>I also added a "Go to Top" button that stays fixed at the bottom-right of the screen using position: fixed. It links to an id="top" on the body tag. I gave it a large border-radius (999px) to make it circular and styled it with the same green colour used across the site (#315c4b). Its purely HTML and CSS — no JavaScript needed.</p>
+
+                    <h3>Accessibility</h3>
+                        <p>The content page has two nav elements — the main site navigation and the internal page navigation — and I gave each one a different aria-label so screen readers can tell them apart ("Main navigation" and "Page sections"). All four images have descriptive alt text explaining what the image shows. The Go to Top button has an aria-label="Go to top of page" so its clear what it does even if you cant see the arrow symbol. I used semantic heading levels (h1 for the site name in the header, h2 for section headings) to keep the hierarchy correct.</p>
+
+                    <h3>Link to the validation page</h3>
+                        <p><a href="validation_ST3.html#contentVal">See validation report for the Content page</a></p>
+
+                    <h3>Link to the page</h3>
+                        <p><a href="content_ST3.html" target="_blank">View the Content page</a></p>
+            </section>
+
+            <!-- ==================== CHALLENGES ==================== -->
+            <section>
+                <h2 id="challenge">Challenges and Lessons Learned</h2>
+                    <p><strong>1. Getting the CSS-only expand to work on keyboard:</strong> The hover effect on the team cards was straightforward enough, but I realised that keyboard-only users wouldnt be able to see the hidden details. I had to learn about tabindex and how :focus works in CSS. Once I added tabindex="0" to each card and included :focus in the CSS selector alongside :hover, it worked. This taught me that you always need to think about how people without a mouse will use your page.</p>
+
+                    <p><strong>2. Form validation error messages:</strong> I initially had all the error messages showing at once which looked messy. I had to figure out how to hide them by default with display: none and only show the relevant ones when validation fails. I also had to make sure they reset properly if the user corrects a mistake and submits again. It took a few tries to get the logic right but I learned a lot about DOM manipulation from it.</p>
+
+                    <p><strong>3. The scrollable programme directory:</strong> I wanted the programme cards to be inside a scrollable box so the page doesnt get too long, but at first the scroll container wasnt showing properly because I hadnt set a max-height. Once I added max-height and overflow-y: scroll it worked. I also had to make sure the cards inside still looked right with flexbox — getting the image to stay a fixed size while the text flexes was a bit fiddly at first.</p>
+
+                    <p><strong>4. Keeping page-specific CSS separate from the global stylesheet:</strong> Since Student 1 created the shared styles.css, I didnt want to edit it and risk breaking other peoples pages. So I put all my page-specific styles inside a style tag in the head of each page. This way my styles only apply to my pages and dont affect the rest of the site. It took me a bit to understand the best way to scope CSS without using something like SASS but this approach seemed the simplest and cleanest.</p>
+            </section>
+
+            <!-- ==================== COMPLIANCE ==================== -->
+            <section>
+                <h2 id="compliance">Compliance</h2>
+                    <p>I have tried to make sure all my pages comply with JANET regulations. None of my pages contain any illegal, offensive, or inappropriate content — everything is related to SDG 13 Climate Action and is educational in nature. I have not included any copyrighted material without permission; the images used are either free-to-use or provided for the coursework, and any external links (like the UN Climate Change site) are properly attributed.</p>
+
+                    <p>The feedback form on my page does not actually send data anywhere — its purely a front-end demonstration with JavaScript validation. No personal data is collected, stored or transmitted to a server, so there are no data protection concerns. If this were a real form I would need to consider GDPR and make sure users consent to their data being stored, but since its just a coursework demonstration that isnt applicable here.</p>
+
+                    <p>All pages include proper attribution in the footer showing my name, student ID, and role. The shared template and CSS are credited to Student 1. I have also made sure that the content is suitable for a university website and would be appropriate for anyone to view.</p>
+            </section>
+
+            <!-- ==================== GROUP MEETINGS ==================== -->
+            <section>
+                <h2 id="group">Group Meetings and Individual Contribution Log</h2>
+                    <p>Below is a log of our group meetings throughout the project. All meetings were face-to-face.</p>
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th colspan="6">Group Meetings and Contribution Log</th>
+                            </tr>
+                            <tr>
+                                <th>Meeting</th>
+                                <th>Date &amp; Time</th>
+                                <th>Format</th>
+                                <th>Objective</th>
+                                <th>Attended</th>
+                                <th>My Individual Contribution</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>3 Feb 2026</td>
+                                <td>Face-to-face</td>
+                                <td>Agree on SDG topic and assign roles</td>
+                                <td>Yes</td>
+                                <td>We agreed on SDG 13 Climate Action as our topic. I volunteered to take on the Feedback page, Team page and Content page. We also discussed the general look and feel of the site.</td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>10 Feb 2026</td>
+                                <td>Face-to-face</td>
+                                <td>Review template and start page layouts</td>
+                                <td>Yes</td>
+                                <td>Omar showed us the shared template and styles.css he had been working on. I started planning the layout for my feedback page and sketched out the sections I wanted — programme directory, reviews, and the form.</td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>17 Feb 2026</td>
+                                <td>Face-to-face</td>
+                                <td>Progress check on individual pages</td>
+                                <td>Yes</td>
+                                <td>I showed my progress on the feedback page — the scrollable programme directory and the form layout were mostly done. I got feedback from the group about adding a character counter to the comment box which I then implemented.</td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>24 Feb 2026</td>
+                                <td>Face-to-face</td>
+                                <td>Mid-project review and troubleshooting</td>
+                                <td>Yes</td>
+                                <td>I had finished the feedback page JavaScript validation and started work on the team page. I showed the group the CSS-only hover expand effect I was trying on the team cards and we discussed how to make sure keyboard users could access it too.</td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>3 Mar 2026</td>
+                                <td>Face-to-face</td>
+                                <td>Near-completion review</td>
+                                <td>Yes</td>
+                                <td>My team page was finished and I had started the content page about Climate Action. I showed the group the internal anchor navigation I was building and we made sure all our pages were using the same footer structure and linking to the right page editor and validation files.</td>
+                            </tr>
+
+                            <tr>
+                                <td>6</td>
+                                <td>10 Mar 2026</td>
+                                <td>Face-to-face</td>
+                                <td>Final integration and testing</td>
+                                <td>Yes</td>
+                                <td>I finished my content page and we tested all the links between our pages to make sure nothing was broken. I also double-checked that my nav bar active states were correct on each page and ran the W3C validator (<a href="#ref">W3C, 2025</a>) on my HTML to fix any errors before submission.</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+            </section>
+
+            <!-- ==================== REFERENCES ==================== -->
+            <section>
+                <h2 id="ref">References</h2>
+                    <ul class="ref">
+                        <li>Duckett, J., 2011. <i>HTML and CSS: Design and Build Websites.</i> John Wiley &amp; Sons.</li>
+                        <li>MDN Web Docs (2025) <i>CSS Grid Layout.</i> Available at: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout</a> (Accessed: 8 Mar 2026).</li>
+                        <li>MDN Web Docs (2025) <i>Using Flexbox.</i> Available at: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout</a> (Accessed: 8 Mar 2026).</li>
+                        <li>W3Schools (2025) <i>JavaScript Form Validation.</i> Available at: <a href="https://www.w3schools.com/js/js_validation.asp" target="_blank">https://www.w3schools.com/js/js_validation.asp</a> (Accessed: 10 Mar 2026).</li>
+                        <li>United Nations (2025) <i>SDG 13: Climate Action.</i> Available at: <a href="https://www.un.org/sustainabledevelopment/climate-change/" target="_blank">https://www.un.org/sustainabledevelopment/climate-change/</a> (Accessed: 5 Mar 2026).</li>
+                        <li>The Carbon Trust (2025) <i>The Carbon Trust.</i> Available at: <a href="https://www.carbontrust.com" target="_blank">https://www.carbontrust.com</a> (Accessed: 5 Mar 2026).</li>
+                        <li>W3C (2025) <i>Markup Validation Service.</i> Available at: <a href="https://validator.w3.org/" target="_blank">https://validator.w3.org/</a> (Accessed: 12 Mar 2026).</li>
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar navigation -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 3 — Haroon Hussain
+                    <ul>
+                        <li><a href="#feedback">Feedback Page</a></li>
+                        <li><a href="#team">Team Page</a></li>
+                        <li><a href="#content">Content Page</a></li>
+                    </ul>
+                </li>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h3>About</h3>
+        <p>This page uses the shared template and shared global CSS created by Student 1.</p>
+      </section>
+
+      <section>
+        <h3>Student links</h3>
+        <ul>
+          <li><a href="pageEditor_ST3.html">Page Editor</a></li>
+          <li><a href="validation_ST3.html">Validation</a></li>
+          <li><a href="content_ST3.html">Content</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Student details</h3>
+        <p>Name: Haroon Hussain</p>
+        <p>Role: Student 3</p>
+        <p>ID: w21383630</p>
+      </section>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 EarthWise | Team Green</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EarthWise | Feedback</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Page-specific embedded CSS for feedback page: scrollable programme directory, review cards, form styling, and confirmation box -->
+  <style>
+    /* feedback.html page-specific styles */
+    .scroll-box { max-height: 420px; overflow-y: scroll; border: 1px solid #d9ddd4; border-radius: 14px; padding: 1rem; background: #f8fbfa; }
+    .prog-card { background: white; border-radius: 14px; padding: 1rem; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.07); display: flex; gap: 1rem; align-items: flex-start; }
+    .prog-card img { width: 80px; height: 80px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+    .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1rem; margin: 1rem 0; }
+    .review-card { background: white; border-radius: 14px; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-weight: bold; margin-bottom: 0.4rem; color: #315c4b; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.7rem; border: 1px solid #d9ddd4; border-radius: 8px; font-size: 1rem; }
+    .error-msg { color: red; font-size: 0.85rem; display: none; margin-top: 0.3rem; }
+    .confirm-box { display: none; background: #315c4b; color: white; padding: 1.5rem; border-radius: 14px; text-align: center; font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header"> 
+    <div class="container header-inner">
+      <div class="branding">
+        <img src="images/logo.png" alt="EarthWise sustainability logo with leaf and water symbol">
+        <div>
+          <h1>EarthWise</h1>
+          <p>Greener choices. Stronger communities.</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="home.html" >Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li> 
+          <li><a href="ais.html">AIS</a></li>
+          <li><a href="feedback.html" class="active">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main content area -->
+  <main class="container">
+
+    <!-- Section 1: SDG Programmes & Opportunities — scrollable directory of sustainability programmes with sort dropdown -->
+    <section>
+      <h2 class="section-title">SDG Programmes & Opportunities</h2>
+
+      <div style="margin-bottom: 1rem;">
+        <label for="sort">Sort by:</label>
+        <select id="sort" style="padding: 0.5rem; border-radius: 8px; border: 1px solid #d9ddd4;">
+          <option>Most Popular</option>
+          <option>Nearest</option>
+          <option>Student-Friendly</option>
+        </select>
+      </div>
+
+      <!-- Scrollable container holding programme cards — allows vertical scrolling when content overflows -->
+      <div class="scroll-box">
+        <div class="prog-card">
+          <img src="images/prog1.jpg" alt="Community clean-up volunteers">
+          <div>
+            <h3>Community Clean-Up</h3>
+            <p>Join local volunteers to clean public spaces and raise awareness about waste reduction.</p>
+            <a href="#" class="btn">Get Involved</a>
+          </div>
+        </div>
+        <div class="prog-card">
+          <img src="images/prog2.jpg" alt="Students planting trees in a local park">
+          <div>
+            <h3>Tree Planting Initiative</h3>
+            <p>Volunteer with local groups to plant trees in your area and help offset carbon emissions in your community.</p>
+            <a href="#" class="btn">Get Involved</a>
+          </div>
+        </div>
+        <div class="prog-card">
+          <img src="images/prog3.jpg" alt="People using public transport">
+          <div>
+            <h3>Green Travel Campaign</h3>
+            <p>Swap car journeys for public transport, cycling or walking. This campaign helps students cut their travel emissions without spending more money.</p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+        </div>
+
+        <div class="prog-card">
+          <img src="images/prog4.jpg" alt="University students at a sustainability awareness stall">
+          <div>
+            <h3>Campus Sustainability Club</h3>
+            <p>Join your university's sustainability society to campaign for greener policies on campus, from reducing plastic to switching to renewable energy.</p>
+            <a href="#" class="btn">Join Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Ratings & Reviews — displays average rating and individual user review cards in a responsive grid -->
+    <section>
+      <h2 class="section-title">Ratings & Reviews</h2>
+
+      <div class="info-panel">
+        <p style="font-size: 2rem; font-weight: bold; color: #315c4b;">8.6/10</p>
+        <p><strong>Excellent</strong> — Based on 109 reviews</p>
+      </div>
+
+      <div class="review-grid">
+        <div class="review-card">
+          <h3>Truly Inspiring</h3>
+          <p>This programme changed how I think about sustainability day to day. <a href="#">See more</a></p>
+          <p><strong>Sarah M.</strong> — 12 Jan 2026 | Rating: 9/10</p>
+        </div>
+        <div class="review-card">
+          <h3>Great Way to Get Involved</h3>
+          <p>I joined the campus sustainability club through this site and it was one of the best decisions I made at uni. Really welcoming group. <a href="#">See more</a></p>
+          <p><strong>James T.</strong> — 3 Feb 2026 | Rating: 8/10</p>
+        </div>
+        <div class="review-card">
+          <h3>Simple But Effective</h3>
+          <p>The green travel campaign made me realise how easy it is to cut down on car journeys. I've been cycling to uni for a month now and honestly love it. <a href="#">See more</a></p>
+          <p><strong>Priya K.</strong> — 18 Feb 2026 | Rating: 9/10</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Feedback Form — collects user details and feedback with JavaScript validation -->
+    <section>
+      <h2 class="section-title">Submit Your Feedback</h2>
+
+      <form id="feedbackForm" novalidate>
+        <fieldset>
+          <legend>Personal Details</legend>
+
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Your full name">
+            <span class="error-msg" id="nameError">Please enter your name.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@example.com">
+            <span class="error-msg" id="emailError">Please enter a valid email.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="tel">Telephone</label>
+            <input type="tel" id="tel" placeholder="+44 7000 000000">
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" rows="3" placeholder="Your address"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Feedback Details</legend>
+
+          <div class="form-group">
+           <label for="topic">Topic</label>
+            <select id="topic">
+             <option>Select a topic</option>
+              <option>Programme Quality</option>
+              <option>Website Experience</option>
+              <option>General Feedback</option>
+            </select>
+         </div>
+
+         <div class="form-group">
+           <label for="comment">Comment (max 300 characters)</label>
+           <textarea id="comment" rows="4" maxlength="300" placeholder="Write your feedback..."></textarea>
+           <p id="charCount">300 characters remaining</p>
+           <span class="error-msg" id="commentError">Please write a comment.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="visitDate">Visit Date</label>
+            <input type="date" id="visitDate">
+          </div>
+
+          <div class="form-group">
+            <label for="visitTime">Date & Time of Experience</label>
+            <input type="datetime-local" id="visitTime">
+          </div>
+        </fieldset>
+
+        <button type="button" class="btn" onclick="submitForm()">Submit Feedback</button>
+      </form>
+
+      <!-- Confirmation message — hidden by default, shown via JavaScript when form passes validation -->
+      <div class="confirm-box" id="confirmBox">
+        ✅ Thank you for your feedback! We really appreciate it.
+      </div>
+    </section>
+
+    <!-- JavaScript for form interactivity: character counter updates as user types, validation checks required fields before submission -->
+    <script>
+      // Character counter — updates the remaining character count below the comment textarea as the user types
+      const commentBox = document.getElementById('comment');
+      const charCount = document.getElementById('charCount');
+
+      commentBox.addEventListener('input', function() {
+        const remaining = 300 - commentBox.value.length;
+        charCount.textContent = remaining + ' characters remaining';
+      });
+
+      // Form validation and submission — checks name, email, and comment fields are filled in correctly before showing confirmation
+      function submitForm() {
+        let valid = true;
+
+        // Reset all errors
+        document.querySelectorAll('.error-msg').forEach(e => e.style.display = 'none');
+
+        // Check name
+        const name = document.getElementById('fullname').value.trim();
+        if (name === '') {
+          document.getElementById('nameError').style.display = 'block';
+          valid = false;
+        }
+
+        // Check email
+        const email = document.getElementById('email').value.trim();
+        if (email === '' || !email.includes('@')) {
+          document.getElementById('emailError').style.display = 'block';
+          valid = false;
+        }
+
+        // Check comment
+        const comment = document.getElementById('comment').value.trim();
+        if (comment === '') {
+          document.getElementById('commentError').style.display = 'block';
+          valid = false;
+        }
+
+        // If all valid, show confirmation and hide form
+        if (valid) {
+          document.getElementById('feedbackForm').style.display = 'none';
+          document.getElementById('confirmBox').style.display = 'block';
+        }
+      }
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h3>About</h3>
+        <p>This page uses the shared template and shared global CSS created by Student 1.</p>
+      </section>
+
+      <section>
+        <h3>Student links</h3>
+        <ul>
+          <li><a href="pageEditor_ST3.html">Page Editor</a></li>
+          <li><a href="validation_ST3.html">Validation</a></li>
+          <li><a href="content_ST3.html">Content</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Student details</h3>
+        <p>Name: Haroon Hussain</p>
+        <p>Role: Student 3</p>
+        <p>ID: w21383630</p>
+      </section>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 EarthWise | Team Green</p>
+    </div>
+  </footer>
+
+</body>
+</html>

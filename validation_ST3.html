@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation — Haroon Hussain</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/pageEditor_validator.css">
+
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding">
+        <img src="images/logo.png" alt="EarthWise sustainability logo with leaf and water symbol">
+        <div>
+          <h1>EarthWise</h1>
+          <p>Greener choices. Stronger communities.</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="ais.html">AIS</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+    <section class="stud">
+        <h2>Haroon Hussain, Green, Student 3</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Feedback page validation -->
+            <section>
+                <h2 id="feedbackVal">Feedback Page — Validation Report</h2>
+
+                <h3>Initial validation — errors found</h3>
+                    <p>When I first ran feedback.html through the W3C validator I got two errors. The first was that the &lt;style&gt; element is not allowed as a child of &lt;main&gt; — I had placed my page-specific CSS block inside the &lt;main&gt; tag rather than in the &lt;head&gt;. The second error was a heading hierarchy issue: the review card headings were marked as &lt;h4&gt; which jumped from the section &lt;h2&gt;, skipping &lt;h3&gt; entirely.</p>
+                    <img src="images/validation_feedback_before.png" alt="W3C validation showing errors on feedback.html before fixes">
+
+                <h3>After fixes — no errors</h3>
+                    <p>I fixed both issues by moving the &lt;style&gt; block into the &lt;head&gt; section and changing the review card headings from &lt;h4&gt; to &lt;h3&gt;. After these changes the validator returned no errors.</p>
+                    <img src="images/validation_feedback_after.png" alt="W3C validation showing no errors on feedback.html after fixes">
+
+                <h3>Back to Page Editor</h3>
+                    <p><a href="pageEditor_ST3.html#feedback">Back to the Feedback section in the Page Editor</a></p>
+            </section>
+
+            <!-- Team page validation -->
+            <section>
+                <h2 id="teamVal">Team Page — Validation Report</h2>
+
+                <h3>Initial validation — errors found</h3>
+                    <p>The first validation of team.html flagged one error: the &lt;style&gt; element was not allowed as a child of &lt;main&gt;. The CSS for the team grid and hover effects had been written inside the &lt;main&gt; tag rather than in the &lt;head&gt;, which the validator does not accept.</p>
+                    <img src="images/validation_team_before.png" alt="W3C validation showing errors on team.html before fixes">
+
+                <h3>After fixes — no errors</h3>
+                    <p>Moving the &lt;style&gt; block from inside &lt;main&gt; into the &lt;head&gt; resolved the error. The page then validated with no errors.</p>
+                    <img src="images/validation_team_after.png" alt="W3C validation showing no errors on team.html after fixes">
+
+                <h3>Back to Page Editor</h3>
+                    <p><a href="pageEditor_ST3.html#team">Back to the Team section in the Page Editor</a></p>
+            </section>
+
+            <!-- Content page validation -->
+            <section>
+                <h2 id="contentVal">Content Page — Validation Report</h2>
+
+                <h3>Initial validation — errors found</h3>
+                    <p>Running content_ST3.html through the validator produced one error: the &lt;style&gt; element was not allowed as a child of &lt;main&gt;. The page-specific CSS for the content sections, internal nav, and go-to-top button had been placed inside the &lt;main&gt; element instead of the &lt;head&gt;.</p>
+                    <img src="images/validation_content_before.png" alt="W3C validation showing errors on content_ST3.html before fixes">
+
+                <h3>After fixes — no errors</h3>
+                    <p>Moving the &lt;style&gt; block into the &lt;head&gt; fixed the error. The page validated with no errors after this change.</p>
+                    <img src="images/validation_content_after.png" alt="W3C validation showing no errors on content_ST3.html after fixes">
+
+                <h3>Back to Page Editor</h3>
+                    <p><a href="pageEditor_ST3.html#content">Back to the Content section in the Page Editor</a></p>
+            </section>
+
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar navigation -->
+        <aside>
+            <h3>Validation reports:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 3 — Haroon Hussain
+                    <ul>
+                        <li><a href="#feedbackVal">Feedback Page</a></li>
+                        <li><a href="#teamVal">Team Page</a></li>
+                        <li><a href="#contentVal">Content Page</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h3>About</h3>
+        <p>This page uses the shared template and shared global CSS created by Student 1.</p>
+      </section>
+
+      <section>
+        <h3>Student links</h3>
+        <ul>
+          <li><a href="pageEditor_ST3.html">Page Editor</a></li>
+          <li><a href="validation_ST3.html">Validation</a></li>
+          <li><a href="content_ST3.html">Content</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Student details</h3>
+        <p>Name: Haroon Hussain</p>
+        <p>Role: Student 3</p>
+        <p>ID: w21383630</p>
+      </section>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 EarthWise | Team Green</p>
+    </div>
+  </footer>
+</body>
+</html>

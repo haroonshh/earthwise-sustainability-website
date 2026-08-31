@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EarthWise | Team</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Page-specific embedded CSS: responsive grid layout for team cards, hover/focus expand animation for member details -->
+  <style>
+    /* Page-specific styles for team.html — grid layout, card hover effects, and expandable details panel */
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .member-block { position: relative; background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 18px rgba(0,0,0,0.08); transition: transform 0.3s ease; cursor: pointer; }
+    .member-block:hover, .member-block:focus { transform: translateY(-6px); }
+    .member-block img { width: 100%; height: 220px; object-fit: cover; }
+    .member-details { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; background: #315c4b; color: white; padding: 0 1rem; }
+    .member-block:hover .member-details, .member-block:focus .member-details { max-height: 200px; padding: 1rem; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header"> 
+    <div class="container header-inner">
+      <div class="branding">
+        <img src="images/logo.png" alt="EarthWise sustainability logo with leaf and water symbol">
+        <div>
+          <h1>EarthWise</h1>
+          <p>Greener choices. Stronger communities.</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="home.html" >Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li> 
+          <li><a href="ais.html">AIS</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html" class="active">Team</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main content area — team page content sits within the shared template structure -->
+  <main class="container">
+    <!-- Hero banner introducing the team page with a brief description -->
+    <section class="hero">
+      <span class="label">Our Team</span>
+      <h2>Meet the EarthWise Team</h2>
+      <p>Hover over each member to learn more about their contribution.</p>
+    </section>
+
+  <!-- Team member card grid — each card shows a photo, visible name/role, and expandable details on hover or keyboard focus -->
+  <div class="team-grid">
+    <!-- Student 1: Omar Bash-Imam — Template, Home Page & Gallery -->
+    <div class="member-block" tabindex="0">
+      <img src="images/student1.jpg" alt="Photo of Omar Bash-Imam, Student 1">
+      <div style="padding: 1rem;">
+        <h3>Omar Bash-Imam</h3>
+        <p>Template, Home Page & Gallery</p>
+      </div>
+      <div class="member-details">
+        <p><strong>Full name:</strong> Omar Bash-Imam</p>
+        <p><strong>Role:</strong> Student 1 — Template, Home Page & Gallery</p>
+        <p>Built the shared template and CSS that all team members use.</p>
+      </div>
+    </div>
+    
+    <!-- Student 2: Vikramjit Kalsi — Splash Screen & AIS -->
+    <div class="member-block" tabindex="0">
+      <img src="images/student2.jpeg" alt="Photo of Vikramjit Kalsi, Student 2">
+      <div style="padding: 1rem;">
+        <h3>Vikramjit Kalsi</h3>
+        <p>Splash Screen & AIS</p>
+      </div>
+      <div class="member-details">
+        <p><strong>Full name:</strong> Vikramjit Kalsi</p>
+        <p><strong>Role:</strong> Student 2 — Splash Screen & Action Impact Simulator</p>
+        <p>Built the splash screen and interactive simulator using JavaScript.</p>
+      </div>
+    </div>
+
+    <!-- Student 3: Haroon Hussain — Feedback, Team Page & Content Page -->
+    <div class="member-block" tabindex="0">
+      <img src="images/student3.jpg" alt="Photo of Haroon Hussain, Student 3">
+      <div style="padding: 1rem;">
+        <h3>Haroon Hussain</h3>
+        <p>Feedback, Team & Content Page</p>
+      </div>
+      <div class="member-details">
+        <p><strong>Full name:</strong> Haroon Hussain</p>
+        <p><strong>Role:</strong> Student 3 — Feedback, Team Page & Content Page</p>
+        <p>Developed the feedback form with JavaScript validation, the interactive team page, and the content page</p>
+      </div>
+    </div>
+
+    <!-- Student 4: Galilee Luamba — User Profile & Sitemap -->
+    <div class="member-block" tabindex="0">
+      <img src="images/student4.jpg" alt="Photo of Galilee Luamba, Student 4">
+      <div style="padding: 1rem;">
+        <h3>Galilee Luamba</h3>
+        <p>User Profile & Sitemap</p>
+      </div>
+      <div class="member-details">
+        <p><strong>Full name:</strong> Galilee Luamba</p>
+        <p><strong>Role:</strong> Student 4 — User Profile & Sitemap</p>
+        <p>Developed a JavaScript-driven profile builder with progress tracking and created an interactive SVG sitemap showing site structure.</p>
+      </div>
+    </div>
+
+  </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h3>About</h3>
+        <p>This page uses the shared template and shared global CSS created by Student 1.</p>
+      </section>
+
+      <section>
+        <h3>Student links</h3>
+        <ul>
+          <li><a href="pageEditor_ST3.html">Page Editor</a></li>
+          <li><a href="validation_ST3.html">Validation</a></li>
+          <li><a href="content_ST3.html">Content</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Student details</h3>
+        <p>Name: Haroon Hussain</p>
+        <p>Role: Student 3</p>
+        <p>ID: w21383630</p>
+      </section>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 EarthWise | Team Green</p>
+    </div>
+  </footer>
+
+</body>
+</html>
